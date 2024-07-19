@@ -5,14 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_1CToCyberDiplomaConverter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Конвертация CSV файла в XML для КиберДиплома" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="191,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="191,40,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="191,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="528,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="528,38,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <TextBox x:Name="TextBoxHoursPractice" HorizontalAlignment="Left" Margin="240,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxHoursPractice_PreviewKeyDown" PreviewTextInput="TextBoxHoursPractice_PreviewTextInput"/>
+        <TextBox x:Name="TextBoxHoursSEC" HorizontalAlignment="Left" Margin="240,40,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxHoursSEC_PreviewKeyDown" PreviewTextInput="TextBoxHoursSEC_PreviewTextInput"/>
+        <TextBox x:Name="TextBoxHoursContact" HorizontalAlignment="Left" Margin="240,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxHoursContact_PreviewKeyDown" PreviewTextInput="TextBoxHoursContact_PreviewTextInput"/>
+        <TextBox x:Name="TextBoxSpecialityCode" HorizontalAlignment="Left" Margin="240,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxSpecialityCode_PreviewKeyDown" PreviewTextInput="TextBoxSpecialityCode_PreviewTextInput"/>
+        <TextBox x:Name="TextBoxYearDocPrevEducation" HorizontalAlignment="Left" Margin="240,130,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxYearDocPrevEducation_PreviewKeyDown" PreviewTextInput="TextBoxYearDocPrevEducation_PreviewTextInput"/>
+        <TextBox x:Name="TextBoxValueEduProgram" HorizontalAlignment="Left" Margin="240,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxValueEduProgram_PreviewKeyDown" PreviewTextInput="TextBoxValueEduProgram_PreviewTextInput"/>
+        <ComboBox x:Name="ComboBoxStudyPeriod" HorizontalAlignment="Left" Margin="240,186,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ComboBoxFormOfEducation" HorizontalAlignment="Left" Margin="240,216,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Выберите файл CSV" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonAddCSVFile" Content="Добавить файл CSV" HorizontalAlignment="Left" Margin="239,249,0,0" VerticalAlignment="Top" Click="ButtonAddCSVFile_Click" Width="121"/>
+        <Label x:Name="LabelCSVFilePath" Content="Путь: " HorizontalAlignment="Left" Margin="382,246,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxQualification" Margin="518,10,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" PreviewKeyDown="TextBoxQualification_PreviewKeyDown"/>
+        <ComboBox x:Name="ComboBoxHoursContactType" Margin="518,40,10,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBoxSpecialization" Margin="518,70,10,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBoxSpecialityName" Margin="518,100,10,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxDateDecisionSEC" Margin="518,130,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" PreviewKeyDown="TextBoxDateDecisionSEC_PreviewKeyDown" PreviewTextInput="TextBoxDateDecisionSEC_PreviewTextInput"/>
+        <TextBox x:Name="TextBoxChairmanSEC" Margin="518,160,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" PreviewKeyDown="TextBoxChairmanSEC_PreviewKeyDown" PreviewTextInput="TextBoxChairmanSEC_PreviewTextInput"/>
+        <Label Content="Количество ЗЕ на практики" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
+        <Label Content="Коилчество ЗЕ на ГИА" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="Количество контактных часов" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="Код специальности" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Год выдачи предыдущего документа" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top"/>
+        <Label Content="Объём образовательной программы" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top"/>
+        <Label Content="Срок обучения" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top"/>
+        <Label Content="Форма обучения" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top"/>
+        <Label Content="Квалификация" HorizontalAlignment="Left" Margin="380,6,0,0" VerticalAlignment="Top"/>
+        <Label Content="Тип контактных часов" HorizontalAlignment="Left" Margin="380,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="Специализация" HorizontalAlignment="Left" Margin="380,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="Специальность" HorizontalAlignment="Left" Margin="380,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Дата решения ГЭК" HorizontalAlignment="Left" Margin="380,126,0,0" VerticalAlignment="Top"/>
+        <Label Content="Председатель ГЭК" HorizontalAlignment="Left" Margin="380,156,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CheckBoxIndexCheck" Content="Включить индексы в наименования дисциплин для проверки" HorizontalAlignment="Left" Margin="382,191,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonStart" Content="Начать конвертацию" Margin="654,279,10,0" VerticalAlignment="Top" Click="ButtonStart_Click"/>
+        <Label x:Name="LabelState" Content="Состояние" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
